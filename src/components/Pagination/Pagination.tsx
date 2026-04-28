@@ -1,7 +1,7 @@
 type Props = {
   total: number;
   perPage: number;
-  currentPage: number;
+  currentPage?: number;
   onPageChange: (page: number) => void;
 };
 
@@ -48,7 +48,10 @@ export const Pagination = ({
             href={`#${page}`}
             onClick={event => {
               event.preventDefault();
-              onPageChange(page);
+
+              if (page !== currentPage) {
+                onPageChange(page);
+              }
             }}
           >
             {page}
