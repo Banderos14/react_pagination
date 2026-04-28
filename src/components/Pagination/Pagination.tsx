@@ -8,7 +8,7 @@ type Props = {
 export const Pagination = ({
   total,
   perPage,
-  currentPage,
+  currentPage = 1,
   onPageChange,
 }: Props) => {
   const totalPages = Math.ceil(total / perPage);
